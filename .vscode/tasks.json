@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build + Flash (Release)",
+            "type": "shell",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/tools/build_flash.ps1\" -Config Release",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build + Flash (Debug)",
+            "type": "shell",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/tools/build_flash.ps1\" -Config Debug",
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build only (Release)",
+            "type": "shell",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/tools/build_flash.ps1\" -Config Release -NoFlash",
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
